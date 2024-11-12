@@ -21,12 +21,12 @@ public class ParkService {
         public String clientCert_x;
         public String clientCertPasswd_x;
         public Integer timeout_x;
-        private String[] ns_map_type_info = new String[]{'http://parks.services/', 'parksServices'};
+        private String[] ns_map_type_info = new String[]{'http://parks.services/', 'ParkService'};
         public String[] byCountry(String arg0) {
-            parksServices.byCountry request_x = new parksServices.byCountry();
+            ParkService.byCountry request_x = new ParkService.byCountry();
             request_x.arg0 = arg0;
-            parksServices.byCountryResponse response_x;
-            Map<String, parksServices.byCountryResponse> response_map_x = new Map<String, parksServices.byCountryResponse>();
+            ParkService.byCountryResponse response_x;
+            Map<String, ParkService.byCountryResponse> response_map_x = new Map<String, ParkService.byCountryResponse>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -38,7 +38,7 @@ public class ParkService {
               'byCountry',
               'http://parks.services/',
               'byCountryResponse',
-              'parksServices.byCountryResponse'}
+              'ParkService.byCountryResponse'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.return_x;

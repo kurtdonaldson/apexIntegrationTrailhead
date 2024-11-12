@@ -1,15 +1,16 @@
 public with sharing class ParkLocator {
 
-    public List<String> country(String countryInput){
 
-        ParkService.byCountry parkService = new ParkService.byCountry();
+    public static List<String> country(String countryInput){
 
-        System.debug('Park Service variable = ' + parkService);
+        ParkService.ParksImplPort parks = new ParkService.ParksImplPort();
 
-        List<String> dummyList = new List<String>{'bees', 'tigers'};
+        List<String> parkNames = parks.byCountry(countryInput);
 
-        return dummyList;
+        System.debug(parkNames);
+
+        return parkNames;
+
 
     }
-
 }
